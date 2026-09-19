@@ -1,82 +1,78 @@
 /* assets/css/style.css */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --bg-main: #f8fafc;
   --bg-surface: #ffffff;
-  --text-primary: #0f172a;  /* Very dark charcoal for high contrast */
-  --text-secondary: #475569;/* Readable slate text */
-  --border-light: #e2e8f0;
-  --accent-teal: #0d9488;   /* Deep accessible teal */
+  --text-dark: #0f172a;       /* Deep charcoal for main text */
+  --text-muted: #334155;      /* Dark slate for secondary body text */
+  --border-color: #cbd5e1;
+  --accent-teal: #0d9488;     /* Accessible deep teal */
   --accent-teal-hover: #0f766e;
-  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
   font-family: var(--font-inter);
   background-color: var(--bg-main);
-  color: var(--text-primary);
-  letter-spacing: -0.011em;
-  overflow-x: hidden;
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
-/* Header & Navigation */
+/* Header & Nav */
 .navbar {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-light);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .nav-link {
-  color: var(--text-secondary) !important;
+  color: var(--text-muted) !important;
   font-weight: 500;
-  transition: color 0.2s ease;
 }
 
 .nav-link:hover, .nav-link.active {
   color: var(--accent-teal) !important;
 }
 
-/* Custom Buttons */
+/* Buttons */
 .btn-teal {
   background-color: var(--accent-teal);
-  color: #ffffff;
+  color: #ffffff !important;
+  font-weight: 600;
   border: none;
-  font-weight: 500;
-  transition: all 0.25s ease;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50rem;
 }
 
 .btn-teal:hover {
   background-color: var(--accent-teal-hover);
-  color: #ffffff;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
 }
 
 .btn-outline-dark-custom {
-  border: 1px solid var(--text-primary);
-  color: var(--text-primary);
+  border: 2px solid var(--text-dark);
+  color: var(--text-dark);
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50rem;
   background: transparent;
-  font-weight: 500;
-  transition: all 0.25s ease;
 }
 
 .btn-outline-dark-custom:hover {
-  background: var(--text-primary);
+  background: var(--text-dark);
   color: #ffffff;
 }
 
-/* Hero Section with Video Background */
+/* Clean Hero Section with Dark Overlay for Video */
 .hero-section {
   position: relative;
-  min-height: 85vh;
+  min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  background-color: #0f172a;
   overflow: hidden;
-  background-color: #0f172a; /* Dark fallback while video loads */
+  padding-top: 80px;
 }
 
 .hero-video-bg {
@@ -85,12 +81,10 @@ body {
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
   z-index: 1;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  opacity: 0.45; /* Darkens video to guarantee text readability */
+  opacity: 0.35; /* Darkens video so white text is 100% readable */
 }
 
 .hero-overlay {
@@ -98,31 +92,25 @@ body {
   z-index: 2;
 }
 
-/* Clean Light Cards */
+/* White Cards with Sharp Text */
 .clean-card {
   background: var(--bg-surface);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-.clean-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* Form Styling */
+/* Form Controls */
 .form-control-custom {
   background: #ffffff;
-  border: 1px solid var(--border-light);
-  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  color: var(--text-dark);
   border-radius: 8px;
   padding: 0.75rem 1rem;
 }
 
 .form-control-custom:focus {
   border-color: var(--accent-teal);
-  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
-  color: var(--text-primary);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+  color: var(--text-dark);
 }
