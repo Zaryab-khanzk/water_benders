@@ -23,6 +23,10 @@
   --mute: #93a1b8;
   --line: rgba(184, 154, 98, 0.28);
 
+  /* section glass: lower alpha / blur = more of the fountain shows through */
+  --band-bg: rgba(4, 7, 13, 0.35);
+  --band-blur: 2px;
+
   /* fonts */
   --display: 'Marcellus', Georgia, serif;
   --body: 'Manrope', system-ui, sans-serif;
@@ -63,6 +67,30 @@ a:hover { color: #7ff3ec; }
 option { background: var(--navy); color: var(--ink); }
 
 .text-mute { color: var(--mute) !important; }
+
+/* No text selection, except contact details (email, phone, address) and form fields */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+a[href^="mailto:"],
+a[href^="tel:"],
+address,
+.selectable,
+input,
+textarea,
+select {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
+img {
+  -webkit-user-drag: none;
+  
+}
 
 
 /* ==========================================================================
@@ -202,9 +230,9 @@ option { background: var(--navy); color: var(--ink); }
 
 /* dark frosted band so text stays readable over the 3D scene */
 .glass-band {
-  background: rgba(4, 7, 13, 0.72);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  background: var(--band-bg);
+  -webkit-backdrop-filter: blur(var(--band-blur));
+  backdrop-filter: blur(var(--band-blur));
 }
 
 
@@ -242,9 +270,9 @@ option { background: var(--navy); color: var(--ink); }
 }
 
 .panel {
-  background: rgba(11, 23, 48, 0.5);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  background: rgba(11, 23, 48, 0.4);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--line);
   border-radius: 6px;
   padding: 2rem;
