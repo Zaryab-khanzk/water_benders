@@ -1,74 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | Water Benders</title>
-  <meta name="description" content="Inquire about commissioning a luxury architectural fountain or custom aquatic feature with Water Benders.">
-  <link rel="icon" href="assets/images/water-benders-noBG.png" type="image/png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/style.css" rel="stylesheet">
+<link rel="icon" href="assets/images/water-benders-noBG.png">
+<title>Contact | Water Benders</title>
 </head>
 <body>
+<canvas id="fountain-canvas" data-mode="ambient" aria-hidden="true"></canvas>
+<div data-include="includes/header.html"></div>
 
-  <div id="header-placeholder"></div>
+<main>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Book a consultation</h1>
+      <p class="mt-3">Tell us about your site and what you have in mind. We reply within two working days.</p>
+    </div>
+  </section>
 
-  <section class="py-5 mt-5">
-    <div class="container py-5">
-      <div class="row g-5">
-        <div class="col-lg-6">
-          <h1 class="display-4 fw-bold text-white mb-4">Start Your Commission</h1>
-          <p class="text-muted fs-5 mb-5">Our engineering design team works with architects, developers, and private clients globally. Let's realize your vision.</p>
-          
-          <div class="mb-4">
-            <h6 class="text-white fw-semibold mb-1">Direct Email</h6>
-            <p class="text-muted fs-6">concierge@waterbenders.com</p>
-          </div>
-          <div class="mb-4">
-            <h6 class="text-white fw-semibold mb-1">Consultation Desk</h6>
-            <p class="text-muted fs-6">+1 (800) 555-FLOW</p>
-          </div>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="glass-card p-4 p-md-5">
-            <div id="formAlert" class="alert alert-info bg-opacity-10 border-info text-info d-none mb-4" role="alert">
-              Thank you! Your inquiry has been received. Our team will contact you within 24 business hours.
+  <section class="section glass-band pt-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <form id="contact-form" class="panel" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6"><label class="form-label" for="name">Full name</label><input class="form-control" id="name" name="name" required autocomplete="name"><div class="invalid-feedback">Enter your name.</div></div>
+              <div class="col-md-6"><label class="form-label" for="email">Email</label><input class="form-control" type="email" id="email" name="email" required autocomplete="email"><div class="invalid-feedback">Enter a valid email address.</div></div>
+              <div class="col-md-6"><label class="form-label" for="phone">Phone (optional)</label><input class="form-control" type="tel" id="phone" name="phone" autocomplete="tel"></div>
+              <div class="col-md-6"><label class="form-label" for="type">Project type</label>
+                <select class="form-select" id="type" name="type" required><option value="">Choose one</option><option>Fountain</option><option>Water wall</option><option>Reflecting pool</option><option>Maintenance or restoration</option></select>
+                <div class="invalid-feedback">Choose a project type.</div></div>
+              <div class="col-12"><label class="form-label" for="message">Your project</label><textarea class="form-control" id="message" name="message" rows="5" required></textarea><div class="invalid-feedback">Tell us a little about your project.</div></div>
+              <div class="col-12"><button class="btn btn-wb btn-lg" type="submit">Send request</button></div>
+              <div class="col-12 d-none" id="form-status" role="status"><p class="mb-0 text-info">Request sent. We will reply within two working days.</p></div>
             </div>
-            
-            <form id="contactForm">
-              <div class="mb-3">
-                <label class="form-label text-white fs-6">Full Name</label>
-                <input type="text" class="form-control form-control-custom" required placeholder="John Doe">
-              </div>
-              <div class="mb-3">
-                <label class="form-label text-white fs-6">Email Address</label>
-                <input type="email" class="form-control form-control-custom" required placeholder="john@example.com">
-              </div>
-              <div class="mb-3">
-                <label class="form-label text-white fs-6">Project Type</label>
-                <select class="form-select form-control-custom text-white">
-                  <option value="private" class="bg-dark">Private Residential Estate</option>
-                  <option value="commercial" class="bg-dark">Commercial / Civic Installation</option>
-                  <option value="hospitality" class="bg-dark">Hospitality & Resort</option>
-                </select>
-              </div>
-              <div class="mb-4">
-                <label class="form-label text-white fs-6">Message / Project Brief</label>
-                <textarea class="form-control form-control-custom" rows="4" required placeholder="Tell us about your project requirements..."></textarea>
-              </div>
-              <button type="submit" class="btn btn-teal btn-lg w-100 rounded-3 fw-medium">Submit Commission Request</button>
-            </form>
+          </form>
+        </div>
+        <div class="col-lg-5">
+          <div class="panel h-100">
+            <h2 class="h3">Studio</h2>
+            <p class="text-mute">Replace with your address and hours.</p>
+            <p class="mb-1"><a href="mailto:hello@waterbenders.com">hello@waterbenders.com</a></p>
+            <p><a href="tel:+920000000000">+92 000 0000000</a></p>
           </div>
         </div>
       </div>
     </div>
   </section>
+</main>
 
-  <div id="footer-placeholder"></div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/includes.js"></script>
-  <script src="assets/js/main.js"></script>
+<div data-include="includes/footer.html"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/includes.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/fountain-3d.js"></script>
 </body>
 </html>
