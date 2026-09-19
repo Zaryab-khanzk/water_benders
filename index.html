@@ -41,28 +41,58 @@
   <div id="header-placeholder"></div>
 
   <!-- Hero Section -->
-  <section class="hero-section">
-    <canvas id="fountain-canvas"></canvas>
-    <div class="container hero-content text-center py-5">
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <span class="badge bg-white bg-opacity-10 text-white rounded-pill px-3 py-2 mb-4 border border-white border-opacity-10 fs-7">
-            The Pinnacle of Aquatic Architecture
-          </span>
-          <h1 class="display-2 fw-bold text-white mb-4 tracking-tight">
-            Where architecture meets <span class="text-info" style="color: var(--accent-teal) !important;">liquid art</span>.
-          </h1>
-          <p class="lead text-muted mx-auto mb-5 style-width" style="max-width: 680px;">
-            We design, model, and build world-class fountain installations that redefine spaces through precision hydrodynamics and fluid motion modeling.
-          </p>
-          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-            <a href="portfolio.html" class="btn btn-teal btn-lg rounded-pill px-5">Explore Our Works</a>
-            <a href="contact.html" class="btn btn-outline-light-custom btn-lg rounded-pill px-5">Consult an Engineer</a>
-          </div>
+<section class="hero-section text-center text-white">
+  <!-- Place your video file inside assets/videos/hero-fountain-bg.mp4 -->
+  <video autoplay loop muted playsinline class="hero-video-bg">
+    <source src="assets/videos/hero-fountain-bg.mp4" type="video/mp4">
+  </video>
+  
+  <div class="container hero-overlay py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <span class="badge bg-white bg-opacity-20 text-white rounded-pill px-3 py-2 mb-3">
+          Architectural Water Engineering
+        </span>
+        <h1 class="display-3 fw-bold mb-4">
+          Where architecture meets liquid art[cite: 5].
+        </h1>
+        <p class="lead mb-5 text-white-50 mx-auto" style="max-width: 650px;">
+          Designing and constructing custom commercial and residential fountains built to elevate architectural spaces[cite: 5].
+        </p>
+        <div class="d-flex gap-3 justify-content-center">
+          <a href="portfolio.html" class="btn btn-teal btn-lg rounded-pill px-4">View Portfolio</a>
+          <a href="contact.html" class="btn btn-outline-light btn-lg rounded-pill px-4">Contact Us</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Content Section -->
+<section class="py-5">
+  <div class="container py-4">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="clean-card p-4 h-100">
+          <h4 class="fw-bold text-dark mb-3">Custom Fountain Design</h4>
+          <p class="text-secondary mb-0">3D modeling, fluid calculations, and site-specific blueprints tailored to modern architecture[cite: 5].</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="clean-card p-4 h-100">
+          <h4 class="fw-bold text-dark mb-3">Water Flow Mechanics</h4>
+          <p class="text-secondary mb-0">Precision nozzles and pressure controls to create stable streams and splash-free laminar jets[cite: 5].</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="clean-card p-4 h-100">
+          <h4 class="fw-bold text-dark mb-3">Lighting Integration</h4>
+          <p class="text-secondary mb-0">Automated pump timing and color-synchronized underwater LED setups[cite: 5].</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Features Grid -->
   <section class="py-5 bg-darker">
